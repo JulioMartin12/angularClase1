@@ -1,3 +1,5 @@
 <ul>
-    <li *ngFor="let producto of productos"> {{producto.nombre}} ${{producto.precio}} </li>
+    <li *ngFor="let pais of paises"> {{pais}} 
+        <span (click)="removerPais(pais)">X</span>
+    </li>
 </ul>

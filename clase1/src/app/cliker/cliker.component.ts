@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cliker',
@@ -7,15 +7,20 @@ import { Component } from '@angular/core';
 })
 export class ClikerComponent {
 //Property Binding
+@Input()
   numero : number = 0; 
 
+@Output()
+  clickEmitter = new EventEmitter();
   //Event Binding
  incrementar(){
   this.numero ++;
+  this.clickEmitter.emit();
  }
 
  decrementar(){
   this.numero --;
+  this.clickEmitter.emit();
  }
  reset(){
   this.numero = 0;

@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Primera Clase';
+  valorInicial : number = -1;
+  paises : string [] = ['Argentina', 'Francia', 'Brazil', 'Uruguay', 'España']
+
+  clickerWasClicked(){
+    console.log('Cliker was clicked');
+  }
+
+  deleteCountry(paisBorrar: string){
+    this.paises = this.paises.filter(pais => pais !== paisBorrar)
+
+  }
 }

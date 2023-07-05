@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-type Producto = {
+/* type Producto = {
   nombre : string,
   precio : number
-}
+} */
 
 
 @Component({
@@ -13,7 +13,17 @@ type Producto = {
 })
 export class ListadoComponent {
 
-  paises : string[] = ['Argentina', 'Francia', 'Brasil','Colombia'];
+  @Input()
+  paises : string[] = [];
+
+@Output()
+deleteCountry = new EventEmitter();
+
+  removerPais(paisBorrar:string){
+ this.deleteCountry.emit(paisBorrar);
+  }
+
+ /*  paises : string[] = ['Argentina', 'Francia', 'Brasil','Colombia'];
   
   productos : Producto [] = [
     {nombre:"Nokia",
@@ -24,6 +34,6 @@ export class ListadoComponent {
      precio:300},
      {nombre:"Samsung",
      precio:200},
-  ] 
+  ]  */
 
 }

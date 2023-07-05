@@ -1,2 +1,4 @@
-<!-- <app-cliker></app-cliker> -->
-<app-listado></app-listado>
+<!-- <app-cliker [numero]="5"></app-cliker>
+<app-cliker [numero]="valorInicial" (clickEmitter)="clickerWasClicked()" ></app-cliker> -->
+<h1>Cantidad de paises : {{paises.length}} </h1>
+<app-listado [paises]="paises" (deleteCountry)="deleteCountry($event)"></app-listado>

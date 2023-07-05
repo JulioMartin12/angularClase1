@@ -1,8 +1,8 @@
 <div class="clicker-container">
-    <h1> {{numero}} </h1>
+    <h1 [ngStyle]="{'color': numero < 0 ? 'red' : 'blue'}"> {{numero}} </h1>
     <span *ngIf="numero >=0">Positivo</span>
     <span *ngIf="numero < 0">Negativo</span>
-    <button (click)="incrementar()">+1</button>
+    <button (click)="incrementar()" >+1</button>
     <button (click)="reset()">Reset</button>
     <button (click)="decrementar()">-1</button>
 </div>
